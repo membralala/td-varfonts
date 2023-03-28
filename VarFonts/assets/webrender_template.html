@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #content {
+                font-size: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+        </div>
+        <script>
+            const setFont = (path) => {
+                const myFont = new FontFace("MyVarFont", `url(${path})`);
+                myFont.load().then((loadedFace) => {
+                    document.fonts.clear();
+                    document.fonts.add(loadedFace);
+                    document.getElementById("content").style.fontFamily = "MyVarFont";
+
+                }).catch((err) => {
+                    console.error(err)
+                });
+            };
+
+            const setAxis = (axisSettings) => {
+                const content = document.getElementById("content");
+                content.style["font-variation-settings"] = `${axisSettings}`
+            };
+
+            const setText = (text) => {
+                document.getElementById("content").innerText = text;   
+            };
+        </script>
+    </body>
+</html>
