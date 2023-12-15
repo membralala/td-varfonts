@@ -3,7 +3,7 @@
     <head>
         <style>
             #content {
-                font-size: 200px;
+                font-size: 80px;
             }
         </style>
     </head>
@@ -26,12 +26,28 @@
 
             const setAxis = (axisSettings) => {
                 const content = document.getElementById("content");
-                content.style["font-variation-settings"] = `${axisSettings}`
+                content.style["font-variation-settings"] = `${axisSettings}`;
             };
 
             const setText = (text) => {
-                document.getElementById("content").innerText = text;   
-            };
+                document.getElementById("content").innerHTML = text;   
+            }
+
+            const setFontSize = (size) => {
+                document.getElementById("content").style["font-size"] = `${size}px`;
+            }
+
+            const setLetterSpacing = (spacing) => {
+                document.getElementById("content").style["letter-spacing"] = `${spacing}px`;
+            }
+
+            const setLineHeight = (height) => {
+                document.getElementById("content").style["line-height"] = `${height}`;
+            }
+
+            const setTextAlign = (align) => {
+                document.getElementById("content").style["text-align"] = `${align}`;
+            } 
         </script>
     </body>
 </html>
